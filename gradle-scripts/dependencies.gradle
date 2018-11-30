@@ -1,0 +1,49 @@
+ext {
+
+    //Version
+    supportVersion = '28.0.0'
+    archLifecycleVersion = '1.1.1'
+
+    rxAndroidVersion = '2.1.0'
+    rxJavaVersion = '2.2.3'
+
+
+    //Packages
+    supportPackage = 'com.android.support'
+
+    archLifecycle = 'android.arch.lifecycle'
+    archCore = 'android.arch.core'
+    archPersistence = 'android.arch.persistence.room'
+
+    reactivePackage = 'io.reactivex.rxjava2'
+
+    supportDependencies = [
+
+        design      :buildDependency(supportPackage, 'design', supportVersion),
+        recyclerView:buildDependency(supportPackage, 'recyclerview-v7', supportVersion),
+        cardView    :buildDependency(supportPackage, 'cardview-v7', supportVersion),
+        appCompat   :buildDependency(supportPackage, 'appcompat-v7', supportVersion),
+        support     :buildDependency(supportPackage, 'support-v4', supportVersion),
+
+    ]
+
+    archLifecycleDependencies = [
+
+        extensions    :buildDependency(archLifecycle, 'extensions', archLifecycleVersion),
+        room          :buildDependency(archPersistence, 'runtime', archLifecycleVersion),
+        roomAnnotation:buildDependency(archPersistence, 'compiler', archLifecycleVersion),
+        roomRxjava2   :buildDependency(archPersistence, 'rxjava2', archLifecycleVersion)
+    ]
+
+
+    rxDependencies = [
+
+        rxAndroid:buildDependency(reactivePackage, 'rxandroid', rxAndroidVersion),
+        rxJava   :buildDependency(reactivePackage, 'rxjava', rxJavaVersion)
+    ]
+
+}
+
+static String buildDependency(String pack, String dependency, String version) {
+    return "${pack}:${dependency}:${version}"
+}

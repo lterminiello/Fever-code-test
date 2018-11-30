@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.lterminiello.ferverstar.viewmodel.list.MemberListItemViewModel"/>
+
+        <import type="android.view.View"/>
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/container"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/color_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="16dp"
+            app:color="@{viewModel.color}"
+            tools:background="@color/colorAccent"/>
+
+        <TextView
+            android:id="@+id/member_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_toRightOf="@id/color_image"
+            android:text="@{viewModel.title}"
+            android:textSize="20sp"
+            tools:text="234213453346436"/>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/color_image"
+            android:layout_toRightOf="@id/color_image"
+            android:text="@{viewModel.race}"
+            android:textSize="20sp"
+            tools:text="Human"/>
+
+        <TextView
+            android:id="@+id/multiply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="16dp"
+            android:text="@{viewModel.multiply}"
+            android:textSize="32sp"
+            tools:text="x3"/>
+
+    </RelativeLayout>
+</layout>
